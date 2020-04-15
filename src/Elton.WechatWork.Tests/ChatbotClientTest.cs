@@ -8,12 +8,11 @@ namespace Elton.WechatWork.Tests
     [TestClass]
     public partial class ChatbotClientTest
     {
-        public const string CHATBOT_WEBHOOK_ACCESS_TOKEN = "790931cd-f875-41d9-b552-f41bbc5fd350";
         private ChatbotClient client = null;
         [TestInitialize]
         public void Initialize()
         {
-            client = new ChatbotClient(CHATBOT_WEBHOOK_ACCESS_TOKEN);
+            client = new ChatbotClient(SecretKeys.CHATBOT_WEBHOOK_ACCESS_TOKEN);
         }
 
         [TestMethod]
