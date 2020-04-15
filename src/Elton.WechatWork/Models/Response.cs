@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Elton.WechatWork.Models
 {
-    internal class SendResponse
+    internal abstract class Response
     {
         [JsonConstructor]
-        private SendResponse() { }
+        protected Response() { }
 
-        public SendResponse(int errorCode, string errorMessage)
+        public Response(int errorCode, string errorMessage)
         {
             this.ErrorCode = errorCode;
             this.ErrorMessage = errorMessage;

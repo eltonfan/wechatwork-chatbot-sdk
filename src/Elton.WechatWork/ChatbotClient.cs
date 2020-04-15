@@ -1,4 +1,4 @@
-﻿using Elton.WechatWork.Models;
+﻿using Elton.WechatWork.Models.Webhook;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -17,7 +17,7 @@ namespace Elton.WechatWork
     {
         private static readonly ILogger log = Log.ForContext(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private readonly string accessToken;
-        private readonly string webHookUrl;
+        private readonly string webhookUrl;
         private readonly HttpClient httpClient;
         public ChatbotClient(string accessToken, int timeout = 10 * 1000)
         {
@@ -27,7 +27,7 @@ namespace Elton.WechatWork
             }
 
             this.accessToken = accessToken;
-            webHookUrl = $"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={accessToken}";
+            webhookUrl = $"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={accessToken}";
 
             httpClient = new HttpClient
             {
@@ -45,14 +45,14 @@ namespace Elton.WechatWork
             var jsonString = JsonConvert.SerializeObject(message);
             var content = new StringContent(jsonString, Encoding.UTF8);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json") { CharSet = "utf-8" };
-            var response = await httpClient.PostAsync(webHookUrl, content);
+            var response = await httpClient.PostAsync(webhookUrl, content);
             if (response.StatusCode != System.Net.HttpStatusCode.OK)
             {
                 throw new ChatbotException((int)response.StatusCode, $"Response StatusCode is '{response.StatusCode}'.");
             }
 
             var responseString = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<SendResponse>(responseString);
+            var result = JsonConvert.DeserializeObject<WebhookResponse>(responseString);
 
             if (!result.IsSuccess)
             {

@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Elton.WechatWork.Models
+namespace Elton.WechatWork.Models.Webhook
 {
     /// <summary>
     /// 消息实体类

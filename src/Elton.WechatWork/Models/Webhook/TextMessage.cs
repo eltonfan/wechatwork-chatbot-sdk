@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Elton.WechatWork.Models
+namespace Elton.WechatWork.Models.Webhook
 {
     /// <summary>
     /// 文本类型

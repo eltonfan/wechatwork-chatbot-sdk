@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Elton.WechatWork.Models
+namespace Elton.WechatWork.Models.Webhook
 {
     /// <summary>
     /// Markdown 类型

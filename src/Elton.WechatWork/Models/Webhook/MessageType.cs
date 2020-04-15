@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Elton.WechatWork
+namespace Elton.WechatWork.Models.Webhook
 {
     /// <summary>
     /// 消息类型

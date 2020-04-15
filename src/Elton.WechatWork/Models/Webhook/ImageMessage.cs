@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Elton.WechatWork.Models
+namespace Elton.WechatWork.Models.Webhook
 {
     /// <summary>
     /// 图片类型

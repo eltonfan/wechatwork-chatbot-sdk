@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace Elton
+namespace Elton.WechatWork
 {
 	public static class Base64
 	{
