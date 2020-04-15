@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elton.WechatWork.Apps.Models
+namespace Elton.WechatWork.Models
 {
     public class Token
     {

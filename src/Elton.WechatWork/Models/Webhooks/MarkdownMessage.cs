@@ -5,12 +5,12 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Elton.WechatWork.Models.Webhook
+namespace Elton.WechatWork.Models.Webhooks
 {
     /// <summary>
     /// Markdown 类型
     /// </summary>
-    internal class MarkdownMessage : Message
+    internal class MarkdownMessage : WebhookRequest
     {
         [JsonConstructor]
         public MarkdownMessage() : base(MessageType.Markdown) { }

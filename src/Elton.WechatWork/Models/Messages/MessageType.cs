@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace Elton.WechatWork.Models.Message
+namespace Elton.WechatWork.Models.Messages
 {
     /// <summary>
     /// 应用消息类型

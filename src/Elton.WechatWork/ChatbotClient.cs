@@ -1,4 +1,4 @@
-﻿using Elton.WechatWork.Models.Webhook;
+﻿using Elton.WechatWork.Models.Webhooks;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -40,7 +40,7 @@ namespace Elton.WechatWork
             httpClient.Dispose();
         }
 
-        internal async Task Send(Message message)
+        internal async Task Send(WebhookRequest message)
         {
             var jsonString = JsonConvert.SerializeObject(message);
             var content = new StringContent(jsonString, Encoding.UTF8);

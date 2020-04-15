@@ -1,5 +1,4 @@
-﻿using Elton.WechatWork.Apps.Models;
-using Elton.WechatWork.Models;
+﻿using Elton.WechatWork.Models;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -9,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elton.WechatWork.Apps
+namespace Elton.WechatWork
 {
     /// <summary>
     /// 企业微信· API 应用
@@ -41,7 +40,7 @@ namespace Elton.WechatWork.Apps
             httpClient.Dispose();
         }
 
-        internal async Task<Elton.WechatWork.Models.Message.MessageResponse> SendMessage(Elton.WechatWork.Models.Message.Message message)
+        internal async Task<Models.Messages.MessageResponse> SendMessage(Models.Messages.MessageRequest message)
         {
             if (token == null || DateTime.Now.Subtract(token.Timestamp).TotalSeconds > (token.ExpiresIn / 2))
             {
@@ -61,7 +60,7 @@ namespace Elton.WechatWork.Apps
             }
 
             var responseString = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<Elton.WechatWork.Models.Message.MessageResponse>(responseString);
+            var result = JsonConvert.DeserializeObject<Models.Messages.MessageResponse>(responseString);
 
             if (!result.IsSuccess)
             {

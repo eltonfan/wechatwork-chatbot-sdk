@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
 
-namespace Elton.WechatWork.Models.Webhook
+namespace Elton.WechatWork.Models.Webhooks
 {
     /// <summary>
     /// 图片类型
     /// 
     /// 注：图片（base64编码前）最大不能超过2M，支持JPG,PNG格式
     /// </summary>
-    internal class ImageMessage : Message
+    internal class ImageMessage : WebhookRequest
     {
         [JsonConstructor]
         private ImageMessage() : base(MessageType.Image) { }

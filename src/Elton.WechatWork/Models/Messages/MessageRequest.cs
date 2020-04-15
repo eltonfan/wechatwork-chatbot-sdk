@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Elton.WechatWork.Models.Webhook
+namespace Elton.WechatWork.Models.Messages
 {
     /// <summary>
     /// 消息实体类
     /// </summary>
-    internal abstract class Message
+    internal abstract class MessageRequest
     {
-        protected Message(MessageType type)
+        protected MessageRequest(MessageType type)
         {
             Type = type;
         }

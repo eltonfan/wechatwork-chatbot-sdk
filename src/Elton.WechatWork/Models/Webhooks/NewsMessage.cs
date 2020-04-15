@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 
-namespace Elton.WechatWork.Models.Webhook
+namespace Elton.WechatWork.Models.Webhooks
 {
     /// <summary>
     /// 图文类型
     /// </summary>
-    internal class NewsMessage : Message
+    internal class NewsMessage : WebhookRequest
     {
         /// <summary>
         /// 图文消息，一个图文消息支持1到8条图文

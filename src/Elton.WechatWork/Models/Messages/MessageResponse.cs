@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Elton.WechatWork.Models.Message
+namespace Elton.WechatWork.Models.Messages
 {
     internal class MessageResponse : Response
     {

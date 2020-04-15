@@ -1,4 +1,4 @@
-﻿using Elton.WechatWork.Models.Message;
+﻿using Elton.WechatWork.Models.Messages;
 using Newtonsoft.Json;
 using Serilog;
 using System;

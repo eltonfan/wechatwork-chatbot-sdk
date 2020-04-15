@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Elton.WechatWork.Models.Message
+namespace Elton.WechatWork.Models.Messages
 {
     /// <summary>
     /// 文本类型
     /// </summary>
-    internal class TextMessage : Message
+    internal class TextMessage : MessageRequest
     {
         [JsonConstructor]
         public TextMessage() : base(MessageType.Text) { }

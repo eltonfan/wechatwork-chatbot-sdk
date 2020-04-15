@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Elton.WechatWork.Models.Webhook
+namespace Elton.WechatWork.Models.Webhooks
 {
     /// <summary>
     /// 文本类型
     /// </summary>
-    internal class TextMessage : Message
+    internal class TextMessage : WebhookRequest
     {
         public TextMessage(string content, string[] mentionedList = null, string[] mentionedMobileList = null)
             : base(MessageType.Text)
